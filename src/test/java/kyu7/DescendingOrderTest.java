@@ -1,8 +1,7 @@
 package kyu7;
 
+import kyu7.descendingorder.DescendingOrder;
 import org.junit.jupiter.api.Test;
-
-import java.text.DecimalFormat;
 
 import static org.junit.jupiter.api.Assertions.*;
 
