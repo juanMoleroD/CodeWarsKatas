@@ -18,5 +18,9 @@ class ReverseWordsKataTest {
         assertEquals("owT sdrow", reverseWordsKataTest.reverseWords("Two words"));
     }
 
+    @Test
+    void doesFunctionReverseFiveWordsAndPunctuation() {
+        assertEquals("seoD ti od eviF ?sdroW", reverseWordsKataTest.reverseWords("Does it do Five Words?"));
+    }
 
 }

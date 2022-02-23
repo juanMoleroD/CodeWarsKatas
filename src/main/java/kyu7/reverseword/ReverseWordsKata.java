@@ -1,8 +1,6 @@
 package kyu7.reverseword;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class ReverseWordsKata {
@@ -18,10 +16,9 @@ public class ReverseWordsKata {
                 reversedWords.append(currentWord[x]);
             }
             reversedWords.append(" ");
-
         }
-
-        return reversedWords.toString().trim();
+        reversedWords.deleteCharAt( reversedWords.length() - 1 );
+        return reversedWords.toString();
     }
 
     public static void main(String[] args) {
