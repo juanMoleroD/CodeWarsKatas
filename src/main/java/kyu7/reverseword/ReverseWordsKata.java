@@ -1,24 +1,32 @@
 package kyu7.reverseword;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class ReverseWordsKata {
 
     public String reverseWords(final String original) {
-        char[] words = original.toCharArray();
-        StringBuilder result = new StringBuilder();
+        List<String> wordsList = new ArrayList<>(List.of(original.split(" ")));
+        StringBuilder reversedWords = new StringBuilder();
 
-        for (int i = (words.length -1), j = 0; i >= 0 ; i--,j++){
-            result.append(words[i]);
+        for (int i = 0; i < wordsList.size(); i++) {
+            char[] currentWord = wordsList.get(i).toCharArray();
+
+            for (int x = (currentWord.length -1), j = 0; x >= 0 ; x--,j++){
+                reversedWords.append(currentWord[x]);
+            }
+            reversedWords.append(" ");
+
         }
 
-        return result.toString();
+        return reversedWords.toString().trim();
     }
 
     public static void main(String[] args) {
         ReverseWordsKata kata = new ReverseWordsKata();
-        System.out.println(kata.reverseWords("Words"));
+        System.out.println(kata.reverseWords("Two words"));
     }
 
 
