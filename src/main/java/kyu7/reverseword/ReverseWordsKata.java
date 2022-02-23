@@ -17,7 +17,7 @@ public class ReverseWordsKata {
             }
             reversedWords.append(" ");
         }
-        reversedWords.deleteCharAt( reversedWords.length() - 1 );
+        if (reversedWords.length() != 0) reversedWords.deleteCharAt(reversedWords.length() - 1 );
         return reversedWords.toString();
     }
 
