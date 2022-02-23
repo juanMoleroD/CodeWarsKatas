@@ -4,13 +4,13 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class KataTest {
+class ReverseWordsKataTest {
 
     @Test
     void doesFunctionReverseOneWord() {
-        Kata kata = new Kata();
+        ReverseWordsKata reverseWordsKata = new ReverseWordsKata();
 
-        assertEquals("droW", kata.reverseWords("Word"));
+        assertEquals("droW", reverseWordsKata.reverseWords("Word"));
     }
 
 

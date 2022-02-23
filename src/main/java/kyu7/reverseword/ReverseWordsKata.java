@@ -1,6 +1,6 @@
 package kyu7.reverseword;
 
-public class Kata {
+public class ReverseWordsKata {
 
     public String reverseWords(final String original) {
 
