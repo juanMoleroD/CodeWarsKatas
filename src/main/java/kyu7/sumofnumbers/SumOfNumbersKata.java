@@ -8,7 +8,17 @@ import java.util.stream.IntStream;
 public class SumOfNumbersKata {
 
     public int getSum(int a, int b) {
-        List<Integer> numbers = IntStream.rangeClosed(a,b)
+        if (a == b) return a;
+        int lower, higher;
+        if (a >= b) {
+            higher = a;
+            lower = b;
+        } else {
+            higher = b;
+            lower = a;
+        }
+
+        List<Integer> numbers = IntStream.rangeClosed(lower,higher)
                 .mapToObj(number -> number)
                 .collect(Collectors.toList());
 

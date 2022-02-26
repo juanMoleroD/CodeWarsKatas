@@ -9,11 +9,11 @@ class SumOfNumbersKataTest {
     SumOfNumbersKata app = new SumOfNumbersKata();
 
     @Test
-    void ifBothEqual_returnsZero() {
-        assertEquals(0, app.getSum(1,1));
-        assertEquals(0, app.getSum(-1,-1));
+    void ifBothEqual_returnsValue() {
+        assertEquals(1, app.getSum(1,1));
+        assertEquals(-1, app.getSum(-1,-1));
         assertEquals(0, app.getSum(0,0));
-        assertEquals(0, app.getSum(69,69));
+        assertEquals(69, app.getSum(69,69));
     }
 
     @Test
@@ -26,7 +26,7 @@ class SumOfNumbersKataTest {
     @Test
     void oneNegative_returnsSumOfNumbersInBetween() {
         assertEquals(2, app.getSum(-1,2));
-        assertEquals(2, app.getSum(2,-1));
+        assertEquals(2, app.getSum(2,-1)); // -1 + 0 + 1 +2
         assertEquals(4, app.getSum(-3,4));
         assertEquals(4, app.getSum(4,-3));
     }
