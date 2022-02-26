@@ -23,5 +23,20 @@ class SumOfNumbersKataTest {
         assertEquals(20, app.getSum(2,6));
     }
 
+    @Test
+    void oneNegative_returnsSumOfNumbersInBetween() {
+        assertEquals(2, app.getSum(-1,2));
+        assertEquals(2, app.getSum(2,-1));
+        assertEquals(4, app.getSum(-3,4));
+        assertEquals(4, app.getSum(4,-3));
+    }
+
+    @Test
+    void bothNegative_returnsSumOfNumbersInBetween() {
+        assertEquals(-6, app.getSum(-1,-3));
+        assertEquals(-3, app.getSum(-2,-1));
+        assertEquals(-20, app.getSum(-2,-6));
+        assertEquals(-21, app.getSum(-10,-11));
+    }
 
 }
