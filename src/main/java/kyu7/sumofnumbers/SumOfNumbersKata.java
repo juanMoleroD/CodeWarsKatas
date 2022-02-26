@@ -17,14 +17,7 @@ public class SumOfNumbersKata {
             lower = a;
         }
 
-        List<Integer> numbers = IntStream.rangeClosed(lower,higher)
-                .boxed()
-                .collect(Collectors.toList());
-
-        int sum = 0;
-        for (Integer number : numbers) sum += number;
-
-        return sum;
+        return IntStream.rangeClosed(lower,higher).sum();
     }
 
 }
