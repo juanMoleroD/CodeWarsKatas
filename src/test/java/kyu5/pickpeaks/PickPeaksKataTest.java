@@ -24,4 +24,25 @@ class PickPeaksKataTest {
         int[] testArray = {1,2,1};
         assertEquals(result, app.getPeaks(testArray));
     }
+
+    @Test
+    void finds2Peaks() {
+        Map<String, List<Integer>> result = Map.of("pos", List.of(1,3),"peaks", List.of(2,2));
+        int[] testArray = {1,2,1,2,1};
+        assertEquals(result, app.getPeaks(testArray));
+    }
+
+    @Test
+    void finds2PeaksWith1Plateau() {
+        Map<String, List<Integer>> result = Map.of("pos", List.of(1,4),"peaks", List.of(2,3));
+        int[] testArray = {1,2,2,1,3,1};
+        assertEquals(result, app.getPeaks(testArray));
+    }
+
+    @Test
+    void finds3PeaksWith2Plateaus() {
+        Map<String, List<Integer>> result = Map.of("pos", List.of(1,4,11),"peaks", List.of(2,3,5));
+        int[] testArray = {1,2,1,2,3,3,2,3,3,4,4,5,4};
+        assertEquals(result, app.getPeaks(testArray));
+    }
 }
