@@ -11,16 +11,31 @@ public class PickPeaksKata {
         List<Integer> positions = new ArrayList<>();
         List<Integer> peaks = new ArrayList<>();
 
+        int lastValue = arr[0];
 
+        for (int posIndex = 1; posIndex < arr.length -1; posIndex++) {
+            int currentInt = arr[posIndex];
 
-
+            if (currentInt > lastValue) {
+                if (currentInt >= arr[posIndex + 1]) {
+                    if (smallerIntAhead(posIndex,currentInt,arr)) {
+                        positions.add(posIndex);
+                        peaks.add(arr[posIndex]);
+                        lastValue = currentInt;
+                    }
+                }
+            }
+        }
 
         return Map.of("pos", positions,"peaks", peaks);
     }
 
-    public static void main(String[] args) {
-
-        PickPeaksKata app = new PickPeaksKata();
-
+    private boolean smallerIntAhead(int index, int currentValue, int[] arr) {
+        for(int i = (1 + index); i < arr.length ; i++) {
+            if (currentValue < arr[i]) return false;
+            if (currentValue == arr[i]) continue;
+            if (currentValue > arr[i]) return true;
+        } return false;
     }
+
 }
