@@ -11,10 +11,11 @@ public class PickPeaksKata {
         List<Integer> positions = new ArrayList<>();
         List<Integer> peaks = new ArrayList<>();
 
-        int lastValue = arr[0];
+
 
         for (int posIndex = 1; posIndex < arr.length -1; posIndex++) {
             int currentInt = arr[posIndex];
+            int lastValue = arr[posIndex - 1];
 
             if (currentInt > lastValue) {
                 if (currentInt >= arr[posIndex + 1]) {
