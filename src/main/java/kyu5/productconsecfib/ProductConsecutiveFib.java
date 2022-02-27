@@ -10,7 +10,7 @@ public class ProductConsecutiveFib {
     public static long[] productFib(long prod) {
         // your code
 
-        List<Long> fibonacci = new ArrayList<>(Arrays.asList(1l,1l));
+        List<Long> fibonacci = new ArrayList<>(Arrays.asList(1L,1L));
 
         for(int i = 1; i < Math.sqrt(prod); i++) {
             fibonacci.add(fibonacci.get(i-1) + fibonacci.get(i));
