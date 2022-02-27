@@ -24,8 +24,10 @@ class ProductConsecutiveFibTest {
 
     @Test
     void calculatePair_notExisting() {
-        long[] testResult = {55, 89, 1};
-        assertArrayEquals(testResult, app.productFib(5000));
+        long[] testResult = {55, 89, 0};
+        long[] testResult_2 = {89, 144, 0};
+        assertArrayEquals(testResult, app.productFib(4000));
+        assertArrayEquals(testResult_2, app.productFib(5895));
     }
 
 }
