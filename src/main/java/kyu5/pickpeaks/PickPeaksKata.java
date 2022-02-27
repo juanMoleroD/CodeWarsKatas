@@ -7,27 +7,20 @@ import java.util.Map;
 public class PickPeaksKata {
 
     public Map<String, List<Integer>> getPeaks(int[] arr) {
-        // Your code here!
         List<Integer> positions = new ArrayList<>();
         List<Integer> peaks = new ArrayList<>();
-
-
 
         for (int posIndex = 1; posIndex < arr.length -1; posIndex++) {
             int currentInt = arr[posIndex];
             int lastValue = arr[posIndex - 1];
 
-            if (currentInt > lastValue) {
-                if (currentInt >= arr[posIndex + 1]) {
-                    if (smallerIntAhead(posIndex,currentInt,arr)) {
-                        positions.add(posIndex);
-                        peaks.add(arr[posIndex]);
-                        lastValue = currentInt;
-                    }
+            if (currentInt > lastValue && currentInt >= arr[posIndex + 1]) {
+                if (smallerIntAhead(posIndex, currentInt, arr)) {
+                    positions.add(posIndex);
+                    peaks.add(arr[posIndex]);
                 }
             }
         }
-
         return Map.of("pos", positions,"peaks", peaks);
     }
 
