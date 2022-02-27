@@ -45,4 +45,11 @@ class PickPeaksKataTest {
         int[] testArray = {1,2,1,2,3,3,2,3,3,4,4,5,4};
         assertEquals(result, app.getPeaks(testArray));
     }
+
+    @Test
+    void findsPeakAndIgnoresLastDigitPeak() {
+        Map<String, List<Integer>> result = Map.of("pos", List.of(3),"peaks", List.of(4));
+        int[] testArray = {1,2,3,4,3,2,3};
+        assertEquals(result, app.getPeaks(testArray));
+    }
 }
