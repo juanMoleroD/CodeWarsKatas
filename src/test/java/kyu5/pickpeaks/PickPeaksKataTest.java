@@ -12,7 +12,14 @@ class PickPeaksKataTest {
     PickPeaksKata app = new PickPeaksKata();
 
     @Test
-    void getPeaks() {
+    void returnsEmptyIfNoPeaks() {
+        Map<String, List<Integer>> result = Map.of("pos", List.of(),"peaks", List.of());
+        int[] testArray = {1,1,1,1,1};
+        assertEquals(result, app.getPeaks(testArray));
+    }
+
+    @Test
+    void finds1Peak() {
         Map<String, List<Integer>> result = Map.of("pos", List.of(1),"peaks", List.of(2));
         int[] testArray = {1,2,1};
         assertEquals(result, app.getPeaks(testArray));
