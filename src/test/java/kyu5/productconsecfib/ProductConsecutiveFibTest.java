@@ -12,8 +12,8 @@ class ProductConsecutiveFibTest {
 
     @Test
     void calculatesFirstPair() {
-        long[] testResult = {2,3,1};
-        assertEquals(testResult, app.productFib(6));
+        long[] testResult = {21,34,1};
+        assertArrayEquals(testResult, app.productFib(714));
 
     }
 }
