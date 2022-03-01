@@ -38,4 +38,7 @@ class ScrambliesKataTest {
         assertTrue(testApp.scramble("qwertty", "tt"));
     }
 
+
+
+
 }
