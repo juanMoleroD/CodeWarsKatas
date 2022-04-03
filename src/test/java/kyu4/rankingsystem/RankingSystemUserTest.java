@@ -2,6 +2,7 @@ package kyu4.rankingsystem;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -27,7 +28,6 @@ class RankingSystemUserTest {
 
     @Test
     void user_hasProgress() {
-        RankingSystemUser user = new RankingSystemUser();
         assertEquals(0, user.getProgress());
     }
 
@@ -82,9 +82,9 @@ class RankingSystemUserTest {
     }
 
     @Test
-    void ifActivityRank_over4RanksAbove_increaseProgressBy160() {
+    void ifActivityRank_over4RanksAbove_increaseProgressBy10TimesDifferenceTimesDifference() {
         user.incProgress(-3);
-        assertEquals(60, user.getProgress());
+        assertEquals(50, user.getProgress());
     }
 
 
@@ -147,5 +147,14 @@ class RankingSystemUserTest {
         assertEquals(0, user.getProgress());
     }
 
+    @Test
+    void ifInvalidRank_onIncreaseAct_throwException() {
+        assertThrows(IllegalArgumentException.class, new Executable() {
+            @Override
+            public void execute() throws Throwable {
+                user.incProgress(10);
+            }
+        });
+    }
 
 }

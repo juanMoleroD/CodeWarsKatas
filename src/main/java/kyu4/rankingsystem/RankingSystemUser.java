@@ -15,23 +15,23 @@ public class RankingSystemUser {
         this.progress = 0;
     }
 
-    void incProgress(int activityRank) {
-        int currentRankIndex = listOfRanks.indexOf(getRank());
-        int activityRankIndex = listOfRanks.indexOf(activityRank);
-        int differenceInRankAndActivityIndex = activityRankIndex - currentRankIndex;
+    void incProgress(int activityRank) throws IllegalArgumentException {
+            if (!listOfRanks.contains(activityRank))
+                throw new IllegalArgumentException("invalid activity rank");
 
-        if (differenceInRankAndActivityIndex == 0) progress += 3;
-        if (differenceInRankAndActivityIndex == -1) progress += 1;
-        if (differenceInRankAndActivityIndex >= -2) progress += 0;
+            int currentRankIndex = listOfRanks.indexOf(getRank());
+            int activityRankIndex = listOfRanks.indexOf(activityRank);
+            int differenceInRankAndActivityIndex = activityRankIndex - currentRankIndex;
 
-        if (differenceInRankAndActivityIndex == 1) progress += 10;
-        if (differenceInRankAndActivityIndex == 2) progress += 40;
-        if (differenceInRankAndActivityIndex == 3) progress += 90;
-        if (differenceInRankAndActivityIndex >= 4) progress += 160;
+            if (differenceInRankAndActivityIndex == 0) progress += 3;
+            if (differenceInRankAndActivityIndex == -1) progress += 1;
+            if (differenceInRankAndActivityIndex >= -2) progress += 0;
 
+            if (differenceInRankAndActivityIndex > 0)
+                progress += 10 * differenceInRankAndActivityIndex * differenceInRankAndActivityIndex;
 
-        if (getProgress() >= 100 ) levelUp();
-        if (listOfRanks.indexOf(getRank()) >= listOfRanks.size()-1) setProgress(0);
+            while (getProgress() >= 100) levelUp();
+            if (listOfRanks.indexOf(getRank()) >= listOfRanks.size() - 1) setProgress(0);
     }
 
     private void levelUp() {
