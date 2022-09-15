@@ -15,7 +15,10 @@ public class Xbonacci {
             double newValue = result.get(i-2) + result.get(i-1) + result.get(i);
             result.add(newValue);
         }
-        double[] resultArray = result.stream().mapToDouble(d -> d).toArray();
+        double[] resultArray = new double[n];
+        for (int i = 0; i < n; i++) {
+            resultArray[i] = result.get(i);
+        }
         return resultArray;
     }
 }
