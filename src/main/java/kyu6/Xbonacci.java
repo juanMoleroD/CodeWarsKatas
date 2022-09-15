@@ -1,6 +1,7 @@
 package kyu6;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
@@ -20,5 +21,13 @@ public class Xbonacci {
             resultArray[i] = result.get(i);
         }
         return resultArray;
+    }
+
+    public double[] tribonacci2(double[] s, int n) {
+        double[] result = Arrays.copyOf(s, n);
+        for (int i = 2; i < n; i++) {
+            result[i] = result[i-2] + result[i-1] + result[i];
+        }
+        return result;
     }
 }
