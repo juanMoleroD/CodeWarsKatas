@@ -19,4 +19,17 @@ public class FindOdd {
 
         return Integer.parseInt(result.keySet().toArray()[0].toString());
     }
+    // using XOR bitwise operator
+    public static int findIt2(int[] A) {
+        int xor = 0;
+        System.out.println("xor starts at 0");
+        for (int i = 0; i < A.length; i++) {
+            System.out.println("Loop number " + (i+1));
+            System.out.println("xor is at " + xor + " and the current array Value is " + A[i]);
+            xor ^= A[i];
+            System.out.println("After xor ^= A[i], xor is at " + xor);
+            System.out.println();
+        }
+        return xor;
+    }
 }
