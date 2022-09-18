@@ -17,6 +17,13 @@ class RomanHelperTest {
         assertEquals(10, Kata.toNumber("X"));
         assertEquals(40, Kata.toNumber("XL"));
         assertEquals(50, Kata.toNumber("L"));
+        assertEquals(90, Kata.toNumber("XC"));
+        assertEquals(100, Kata.toNumber("C"));
+        assertEquals(400, Kata.toNumber("CD"));
+        assertEquals(500, Kata.toNumber("D"));
+        assertEquals(900, Kata.toNumber("CM"));
+        assertEquals(1000, Kata.toNumber("M"));
+
     }
 
     @Test
@@ -24,7 +31,16 @@ class RomanHelperTest {
         assertEquals(2, Kata.toNumber("II"));
         assertEquals(3, Kata.toNumber("III"));
         assertEquals(20, Kata.toNumber("XX"));
+        assertEquals(24, Kata.toNumber("XXIV"));
         assertEquals(30, Kata.toNumber("XXX"));
+        assertEquals(35, Kata.toNumber("XXXV"));
+        assertEquals(37, Kata.toNumber("XXXVII"));
+        assertEquals(49, Kata.toNumber("XLIX"));
+        assertEquals(249, Kata.toNumber("CCXLIX"));
+        assertEquals(338, Kata.toNumber("CCCXXXVIII"));
+        assertEquals(999, Kata.toNumber("CMXCIX"));
+
+
     }
 
     @Test
