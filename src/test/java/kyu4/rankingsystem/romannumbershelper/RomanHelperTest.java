@@ -21,5 +21,12 @@ class RomanHelperTest {
 
     @Test
     void toNumber() {
+        assertEquals("I", Kata.toRoman(1));
+        assertEquals("IV", Kata.toRoman(4));
+        assertEquals("V", Kata.toRoman(5));
+        assertEquals("IX", Kata.toRoman(9));
+        assertEquals("X", Kata.toRoman(10));
+        assertEquals("XL", Kata.toRoman(40));
+        assertEquals("L", Kata.toRoman(50));
     }
 }
