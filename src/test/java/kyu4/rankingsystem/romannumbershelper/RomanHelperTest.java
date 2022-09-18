@@ -39,8 +39,6 @@ class RomanHelperTest {
         assertEquals(249, Kata.toNumber("CCXLIX"));
         assertEquals(338, Kata.toNumber("CCCXXXVIII"));
         assertEquals(999, Kata.toNumber("CMXCIX"));
-
-
     }
 
     @Test
@@ -52,7 +50,27 @@ class RomanHelperTest {
         assertEquals("X", Kata.toRoman(10));
         assertEquals("XL", Kata.toRoman(40));
         assertEquals("L", Kata.toRoman(50));
+        assertEquals("XC", Kata.toRoman(90));
+        assertEquals("C", Kata.toRoman(100));
+        assertEquals("CD", Kata.toRoman(400));
+        assertEquals("D", Kata.toRoman(500));
+        assertEquals("CM", Kata.toRoman(900));
+        assertEquals("M", Kata.toRoman(1000));
+
     }
 
+    @Test
+    void convertsCompositeNumbersToRoman() {
+        assertEquals("II", Kata.toRoman(2));
+        assertEquals("III", Kata.toRoman(3));
+        assertEquals("IV", Kata.toRoman(4));
+        assertEquals("VI", Kata.toRoman(6));
+        assertEquals("VIII", Kata.toRoman(8));
+        assertEquals("XI", Kata.toRoman(11));
 
+
+
+
+
+    }
 }
