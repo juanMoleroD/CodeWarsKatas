@@ -67,6 +67,11 @@ class RomanHelperTest {
         assertEquals("VI", Kata.toRoman(6));
         assertEquals("VIII", Kata.toRoman(8));
         assertEquals("XI", Kata.toRoman(11));
+        assertEquals("MMMCCCXXXIII", Kata.toRoman(3333));
+        assertEquals("CMLXXVIII", Kata.toRoman(978));
+        assertEquals("CMXCIX", Kata.toRoman(999));
+        assertEquals("XLI", Kata.toRoman(41));
+        assertEquals("XV", Kata.toRoman(15));
 
 
 
