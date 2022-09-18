@@ -14,6 +14,25 @@ public class RomanHelper {
     }
 
     public int toNumber(String number) {
-        return -1;
+        int result = 0;
+        for (int i = 0; i < number.length(); i++){
+            String currentDigit = number.split("")[i];
+            if (romanReference.contains(currentDigit)){
+                if (i+1 != number.length()){
+                    String nextDigit = number.split("")[i+1];
+                    if (romanReference.indexOf(nextDigit) > romanReference.indexOf(currentDigit)) {
+                        result -= numberReference.get(romanReference.indexOf(currentDigit));
+                    } else result += numberReference.get(romanReference.indexOf(currentDigit));
+                } else result += numberReference.get(romanReference.indexOf(currentDigit));
+
+
+            }
+
+        }
+
+//        for (String digit : number.split("")) {
+//            if (romanReference.contains(digit)) result += numberReference.get(romanReference.indexOf(digit));
+//        }
+        return result;
     }
 }

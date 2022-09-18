@@ -20,7 +20,15 @@ class RomanHelperTest {
     }
 
     @Test
-    void toNumber() {
+    void readsMultipleDigitsInRoman() {
+        assertEquals(2, Kata.toNumber("II"));
+        assertEquals(3, Kata.toNumber("III"));
+        assertEquals(20, Kata.toNumber("XX"));
+        assertEquals(30, Kata.toNumber("XXX"));
+    }
+
+    @Test
+    void convertsSetNumbersToRomans() {
         assertEquals("I", Kata.toRoman(1));
         assertEquals("IV", Kata.toRoman(4));
         assertEquals("V", Kata.toRoman(5));
@@ -29,4 +37,6 @@ class RomanHelperTest {
         assertEquals("XL", Kata.toRoman(40));
         assertEquals("L", Kata.toRoman(50));
     }
+
+
 }
