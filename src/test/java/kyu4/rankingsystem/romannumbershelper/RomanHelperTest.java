@@ -23,7 +23,6 @@ class RomanHelperTest {
         assertEquals(500, Kata.toNumber("D"));
         assertEquals(900, Kata.toNumber("CM"));
         assertEquals(1000, Kata.toNumber("M"));
-
     }
 
     @Test
@@ -56,7 +55,6 @@ class RomanHelperTest {
         assertEquals("D", Kata.toRoman(500));
         assertEquals("CM", Kata.toRoman(900));
         assertEquals("M", Kata.toRoman(1000));
-
     }
 
     @Test
@@ -72,10 +70,5 @@ class RomanHelperTest {
         assertEquals("CMXCIX", Kata.toRoman(999));
         assertEquals("XLI", Kata.toRoman(41));
         assertEquals("XV", Kata.toRoman(15));
-
-
-
-
-
     }
 }
