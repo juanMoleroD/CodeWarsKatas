@@ -6,7 +6,7 @@ public class Spiralizor {
     public  int[][] spiralize(int size) {
         int[][] result = getStartingArray(size);
         Arrays.fill(result[0], 1);
-
+        Arrays.stream(result).forEach(arr -> arr[size-1] = 1);
 
         return result;
     }
