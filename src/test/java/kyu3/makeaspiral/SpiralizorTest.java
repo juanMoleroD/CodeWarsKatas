@@ -43,11 +43,11 @@ class SpiralizorTest {
                 {0,0,0,0,1},
                 {0,0,0,0,1}
         };
-        assertEquals(expected[0][4], 1);
-        assertEquals(expected[1][4], 1);
-        assertEquals(expected[2][4], 1);
-        assertEquals(expected[3][4], 1);
-        assertEquals(expected[4][4], 1);
+        assertEquals(1, spiralizor.spiralize(5)[0][4]);
+        assertEquals(1, spiralizor.spiralize(5)[1][4]);
+        assertEquals(1, spiralizor.spiralize(5)[2][4]);
+        assertEquals(1, spiralizor.spiralize(5)[3][4]);
+        assertEquals(1, spiralizor.spiralize(5)[4][4]);
     }
 
     //    @Test
