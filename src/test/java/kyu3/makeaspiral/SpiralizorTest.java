@@ -7,6 +7,18 @@ import static org.junit.jupiter.api.Assertions.*;
 class SpiralizorTest {
 
     @Test
+    void returnsArrayMatrixOfSizeFilledWith0() {
+        int[][] expected = new int[][] {
+                {0,0,0,0,0},
+                {0,0,0,0,0},
+                {0,0,0,0,0},
+                {0,0,0,0,0},
+                {0,0,0,0,0}
+        };
+    }
+
+
+    @Test
     public void test5() {
         assertArrayEquals(
                 new int[][] {

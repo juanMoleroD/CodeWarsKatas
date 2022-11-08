@@ -1,7 +1,12 @@
 package kyu3.makeaspiral;
 
+import java.util.Arrays;
+
 public class Spiralizor {
     public static int[][] spiralize(int size) {
-        return null;
+        int[][] result = new int[size][size];
+        Arrays.stream(result).forEach(arr -> Arrays.fill(arr, 0));
+
+        return result;
     }
 }
