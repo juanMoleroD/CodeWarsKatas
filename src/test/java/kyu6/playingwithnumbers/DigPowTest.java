@@ -9,6 +9,7 @@ class DigPowTest {
     @Test
     void canReturnDigitPower() {
         assertEquals(5, DigPow.getPoweredSum(12,1));
+        assertEquals(31, DigPow.getPoweredSum(23,2));
     }
 
     //    @Test
