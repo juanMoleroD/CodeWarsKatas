@@ -59,7 +59,14 @@ class SpiralizorTest {
         assertEquals(1, size5Result[3][0]);
     }
 
-    //    @Test
+    @Test
+    void fillsThirdRowUntilHalfPoint() {
+        assertEquals(1, size5Result[2][1]);
+        assertEquals(1, size5Result[2][2]);
+        assertEquals(0, size5Result[2][3]);
+    }
+
+    @Test
     public void test5() {
         assertArrayEquals(
                 new int[][] {
