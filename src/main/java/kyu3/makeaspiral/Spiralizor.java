@@ -22,12 +22,9 @@ public class Spiralizor {
             moveDown(currentCoordinate[0], currentCoordinate[1]);
             moveLeft(currentCoordinate[0], currentCoordinate[1]);
             moveUp(currentCoordinate[0], currentCoordinate[1]);
-
-            System.out.println("current: " + Arrays.toString(currentCoordinate));
-            System.out.println("end of while: " + Arrays.toString(lastCoordinates));
+//            System.out.println("current: " + Arrays.toString(currentCoordinate));
+//            System.out.println("end of while: " + Arrays.toString(lastCoordinates));
         }
-
-//        moveRight(currentCoordinate[0], currentCoordinate[1]);
 
         System.out.println(Arrays.deepToString(this.result));
         return this.result;
@@ -45,13 +42,11 @@ public class Spiralizor {
             if (i == size -1) {
                 this.result[rowIndex][i] = 1;
                 this.currentCoordinate = new int[]{rowIndex, i};
-//                System.out.println(Arrays.toString(currentCoordinate));
                 break;
             }
             if (this.result[rowIndex][i+1] == 0 && this.result[rowIndex+1][i+1] == 0) {
                 this.result[rowIndex][i] = 1;
                 this.currentCoordinate = new int[]{rowIndex, i};
-//                System.out.println(Arrays.toString(currentCoordinate));
             } else break;
 
         }
@@ -62,13 +57,11 @@ public class Spiralizor {
             if (i == size -1){
                 this.result[i][columnIndex] = 1;
                 this.currentCoordinate = new int[]{i, columnIndex};
-//                System.out.println(Arrays.toString(currentCoordinate));
                 break;
             }
             if (this.result[i+1][columnIndex] == 0 && this.result[i+1][columnIndex -1] == 0) {
                 this.result[i][columnIndex] = 1;
                 this.currentCoordinate = new int[]{i, columnIndex};
-//                System.out.println(Arrays.toString(currentCoordinate));
             } else break;
         }
     }
@@ -78,13 +71,11 @@ public class Spiralizor {
             if (i == 0) {
                 this.result[rowIndex][i] = 1;
                 this.currentCoordinate = new int[]{rowIndex, i};
-//                System.out.println(Arrays.toString(currentCoordinate));
                 break;
             }
-            if (this.result[rowIndex][i-1] == 0) {
+            if (this.result[rowIndex][i-1] == 0 && this.result[rowIndex -1][i-1] == 0) {
                 this.result[rowIndex][i] = 1;
                 this.currentCoordinate = new int[]{rowIndex, i};
-//                System.out.println(Arrays.toString(currentCoordinate));
             } else break;
 
         }
@@ -94,25 +85,15 @@ public class Spiralizor {
         for (int i = rowStart; i > -1; i--) {
             if (i == 0){
                 this.result[i][columnIndex] = 1;
-
-//                System.out.println("moveUp before final assignment Coordinates " + Arrays.toString(currentCoordinate));
-//                System.out.println("i: " + i + ", columnIndex: " + columnIndex);
                 this.currentCoordinate = new int[]{i, columnIndex};
-//                System.out.println("moveUp Final Coordinates " + Arrays.toString(currentCoordinate));
-//                System.out.println(Arrays.toString(currentCoordinate));
                 break;
             }
             if (this.result[i-1][columnIndex] == 0) {
                 this.result[i][columnIndex] = 1;
                 this.currentCoordinate = new int[]{i, columnIndex};
-//                System.out.println(Arrays.toString(currentCoordinate));
             } else break;
         }
     }
-
-
-
-
 
 }
 /*
@@ -123,5 +104,32 @@ public class Spiralizor {
 [1, 0, 1, 1, 0, 1, 0, 1],
 [1, 0, 1, 1, 1, 1, 0, 1],
 [1, 0, 0, 0, 0, 0, 0, 1],
-[1, 1, 1, 1, 1, 1, 1, 1]]
+[1, 1, 1, 1, 1, 1, 1, 1]
 */
+/*
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+[1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
+[1, 0, 0, 0, 0, 0, 0, 1, 0, 1],
+[1, 0, 1, 1, 1, 1, 0, 1, 0, 1],
+[1, 0, 1, 0, 1, 1, 0, 1, 0, 1],
+[1, 0, 1, 0, 0, 0, 0, 1, 0, 1],
+[1, 0, 1, 1, 1, 1, 1, 1, 0, 1],
+[1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+[1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
+[1, 0, 0, 0, 0, 0, 0, 1, 0, 1],
+[1, 0, 1, 1, 1, 1, 0, 1, 0, 1],
+[1, 0, 1, 0, 0, 1, 0, 1, 0, 1],
+[1, 0, 1, 0, 0, 0, 0, 1, 0, 1],
+[1, 0, 1, 1, 1, 1, 1, 1, 0, 1],
+[1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+
+
+ */
+

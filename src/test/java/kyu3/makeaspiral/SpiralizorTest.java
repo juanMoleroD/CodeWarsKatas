@@ -95,8 +95,9 @@ class SpiralizorTest {
                 spiralizor.spiralize(8));
     }
 
-//    @Test
-//    void test10() {
-//        spiralizor.spiralize(10);
-//    }
+    @Test
+    void test10() {
+        spiralizor.spiralize(10);
+    }
 }
+
