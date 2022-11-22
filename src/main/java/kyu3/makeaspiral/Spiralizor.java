@@ -21,8 +21,7 @@ public class Spiralizor {
             moveLeft(currentCoordinate[0], currentCoordinate[1]);
             moveUp(currentCoordinate[0], currentCoordinate[1]);
         }
-
-        System.out.println(Arrays.deepToString(this.result));
+//        System.out.println(Arrays.deepToString(this.result));
         return this.result;
     }
 
