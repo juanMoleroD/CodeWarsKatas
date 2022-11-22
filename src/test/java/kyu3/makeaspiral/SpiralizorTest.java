@@ -97,7 +97,34 @@ class SpiralizorTest {
 
     @Test
     void test10() {
-        spiralizor.spiralize(10);
+        int[][] expected = new int[][] {
+                {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+                {0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+                {1, 1, 1, 1, 1, 1, 1, 1, 0, 1},
+                {1, 0, 0, 0, 0, 0, 0, 1, 0, 1},
+                {1, 0, 1, 1, 1, 1, 0, 1, 0, 1},
+                {1, 0, 1, 0, 0, 1, 0, 1, 0, 1},
+                {1, 0, 1, 0, 0, 0, 0, 1, 0, 1},
+                {1, 0, 1, 1, 1, 1, 1, 1, 0, 1},
+                {1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+                {1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
+        };
+        assertArrayEquals(expected, spiralizor.spiralize(10) );
     }
+
+    @Test
+    void test6() {
+        int[][] expected = new int[][] {
+                {1, 1, 1, 1, 1, 1},
+                {0, 0, 0, 0, 0, 1},
+                {1, 1, 1, 1, 0, 1},
+                {1, 0, 0, 1, 0, 1},
+                {1, 0, 0, 0, 0, 1},
+                {1, 1, 1, 1, 1, 1}
+        };
+        assertArrayEquals(expected, spiralizor.spiralize(6) );
+    }
+
+
 }
 
