@@ -44,7 +44,6 @@ public class Spiralizor {
                 this.result[rowIndex][i] = 1;
                 this.currentCoordinate = new int[]{rowIndex, i};
             } else break;
-
         }
     }
 
