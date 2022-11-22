@@ -26,11 +26,13 @@ public class Spiralizor {
 //        }
         moveUp(currentCoordinate[0], currentCoordinate[1]);
 
-        System.out.println(Arrays.deepToString(this.result));
 //        for (int i = coordinates[1]; result[coordinates[0]][i+1] == 0; i++) {
 //            result[coordinates[0]][i] = 1;
 //        }
+        System.out.println("last move rigth start at " + Arrays.toString(currentCoordinate));
         moveRight(currentCoordinate[0], currentCoordinate[1]);
+
+        System.out.println(Arrays.deepToString(this.result));
 
 //        System.out.println(Arrays.deepToString(result));
         return this.result;
@@ -97,7 +99,11 @@ public class Spiralizor {
         for (int i = rowStart; i > -1; i--) {
             if (i == 0){
                 this.result[i][columnIndex] = 1;
+
+//                System.out.println("moveUp before final assignment Coordinates " + Arrays.toString(currentCoordinate));
+//                System.out.println("i: " + i + ", columnIndex: " + columnIndex);
                 this.currentCoordinate = new int[]{i, columnIndex};
+//                System.out.println("moveUp Final Coordinates " + Arrays.toString(currentCoordinate));
                 System.out.println(Arrays.toString(currentCoordinate));
                 break;
             }
@@ -105,7 +111,7 @@ public class Spiralizor {
                 this.result[i][columnIndex] = 1;
                 this.currentCoordinate = new int[]{i, columnIndex};
                 System.out.println(Arrays.toString(currentCoordinate));
-            }
+            } else break;
         }
     }
 
