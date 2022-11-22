@@ -12,29 +12,24 @@ public class Spiralizor {
         this.result = getStartingArray(size);
         this.size = size;
         this.currentCoordinate = new int[]{0, 0};
-//        Arrays.fill(result[0], 1);
-        moveRight(0, 0);
-//        Arrays.stream(result).forEach(arr -> arr[size-1] = 1);
-        moveDown(currentCoordinate[0], currentCoordinate[1]);
-//        Arrays.fill(result[size-1], 1);
-        moveLeft(currentCoordinate[0], currentCoordinate[1]);
 
-//        int[] coordinates = new int[2];
-//        for (int i = size-1; result[i-1][0] == 0; i--) {
-//            result[i][0] = 1;
-//            coordinates = new int[]{i, 0};
-//        }
-        moveUp(currentCoordinate[0], currentCoordinate[1]);
+        System.out.println("while starts at [0, 0]");
 
-//        for (int i = coordinates[1]; result[coordinates[0]][i+1] == 0; i++) {
-//            result[coordinates[0]][i] = 1;
-//        }
-        System.out.println("last move rigth start at " + Arrays.toString(currentCoordinate));
-        moveRight(currentCoordinate[0], currentCoordinate[1]);
+        int[] lastCoordinates = new int[]{};
+        while(!Arrays.equals(lastCoordinates, currentCoordinate)) {
+            lastCoordinates = currentCoordinate;
+            moveRight(currentCoordinate[0], currentCoordinate[1]);
+            moveDown(currentCoordinate[0], currentCoordinate[1]);
+            moveLeft(currentCoordinate[0], currentCoordinate[1]);
+            moveUp(currentCoordinate[0], currentCoordinate[1]);
+
+            System.out.println("current: " + Arrays.toString(currentCoordinate));
+            System.out.println("end of while: " + Arrays.toString(lastCoordinates));
+        }
+
+//        moveRight(currentCoordinate[0], currentCoordinate[1]);
 
         System.out.println(Arrays.deepToString(this.result));
-
-//        System.out.println(Arrays.deepToString(result));
         return this.result;
     }
 
@@ -50,14 +45,14 @@ public class Spiralizor {
             if (i == size -1) {
                 this.result[rowIndex][i] = 1;
                 this.currentCoordinate = new int[]{rowIndex, i};
-                System.out.println(Arrays.toString(currentCoordinate));
+//                System.out.println(Arrays.toString(currentCoordinate));
                 break;
             }
-            if (this.result[rowIndex][i+1] == 0) {
+            if (this.result[rowIndex][i+1] == 0 && this.result[rowIndex+1][i+1] == 0) {
                 this.result[rowIndex][i] = 1;
                 this.currentCoordinate = new int[]{rowIndex, i};
-                System.out.println(Arrays.toString(currentCoordinate));
-            }
+//                System.out.println(Arrays.toString(currentCoordinate));
+            } else break;
 
         }
     }
@@ -67,14 +62,14 @@ public class Spiralizor {
             if (i == size -1){
                 this.result[i][columnIndex] = 1;
                 this.currentCoordinate = new int[]{i, columnIndex};
-                System.out.println(Arrays.toString(currentCoordinate));
+//                System.out.println(Arrays.toString(currentCoordinate));
                 break;
             }
-            if (this.result[i+1][columnIndex] == 0) {
+            if (this.result[i+1][columnIndex] == 0 && this.result[i+1][columnIndex -1] == 0) {
                 this.result[i][columnIndex] = 1;
                 this.currentCoordinate = new int[]{i, columnIndex};
-                System.out.println(Arrays.toString(currentCoordinate));
-            }
+//                System.out.println(Arrays.toString(currentCoordinate));
+            } else break;
         }
     }
 
@@ -83,14 +78,14 @@ public class Spiralizor {
             if (i == 0) {
                 this.result[rowIndex][i] = 1;
                 this.currentCoordinate = new int[]{rowIndex, i};
-                System.out.println(Arrays.toString(currentCoordinate));
+//                System.out.println(Arrays.toString(currentCoordinate));
                 break;
             }
             if (this.result[rowIndex][i-1] == 0) {
                 this.result[rowIndex][i] = 1;
                 this.currentCoordinate = new int[]{rowIndex, i};
-                System.out.println(Arrays.toString(currentCoordinate));
-            }
+//                System.out.println(Arrays.toString(currentCoordinate));
+            } else break;
 
         }
     }
@@ -104,13 +99,13 @@ public class Spiralizor {
 //                System.out.println("i: " + i + ", columnIndex: " + columnIndex);
                 this.currentCoordinate = new int[]{i, columnIndex};
 //                System.out.println("moveUp Final Coordinates " + Arrays.toString(currentCoordinate));
-                System.out.println(Arrays.toString(currentCoordinate));
+//                System.out.println(Arrays.toString(currentCoordinate));
                 break;
             }
             if (this.result[i-1][columnIndex] == 0) {
                 this.result[i][columnIndex] = 1;
                 this.currentCoordinate = new int[]{i, columnIndex};
-                System.out.println(Arrays.toString(currentCoordinate));
+//                System.out.println(Arrays.toString(currentCoordinate));
             } else break;
         }
     }
@@ -120,3 +115,13 @@ public class Spiralizor {
 
 
 }
+/*
+[1, 1, 1, 1, 1, 1, 1, 1],
+[0, 0, 0, 0, 0, 0, 0, 1],
+[1, 1, 1, 1, 1, 1, 0, 1],
+[1, 0, 0, 0, 0, 1, 0, 1],
+[1, 0, 1, 1, 0, 1, 0, 1],
+[1, 0, 1, 1, 1, 1, 0, 1],
+[1, 0, 0, 0, 0, 0, 0, 1],
+[1, 1, 1, 1, 1, 1, 1, 1]]
+*/

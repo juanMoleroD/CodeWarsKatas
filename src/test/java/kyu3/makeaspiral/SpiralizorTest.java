@@ -79,7 +79,7 @@ class SpiralizorTest {
                 spiralizor.spiralize(5));
     }
 
-//    @Test
+    @Test
     public void test8() {
         assertArrayEquals(
                 new int[][] {
@@ -94,4 +94,9 @@ class SpiralizorTest {
                 },
                 spiralizor.spiralize(8));
     }
+
+//    @Test
+//    void test10() {
+//        spiralizor.spiralize(10);
+//    }
 }
